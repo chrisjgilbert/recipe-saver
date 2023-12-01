@@ -1,0 +1,6 @@
+<%= link_to "Add recipe", new_recipe_path %>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe.url, target: "_blank" %></li>
+  <% end %>
+</ul>
