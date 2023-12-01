@@ -10,11 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
   <body class="bg-gray-100">
-    <% flash.each do |flash_type, message| %>
-      <div>
-        <%= message %>
-      </div>
-    <% end %>
+    <%= render "layouts/flash_messages" %>
     <main class="container mx-auto flex flex-col">
       <%= yield %>
     </main>
