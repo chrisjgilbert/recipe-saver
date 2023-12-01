@@ -1,0 +1,7 @@
+<%= form_with model: @recipe do |form| %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %>
+  <%= form.label :url, "Link" %>
+  <%= form.text_field :url %>
+  <%= form.submit "Save" %>
+<% end %>
