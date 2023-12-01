@@ -1,12 +1,12 @@
 <div>
-  <%# <h1 class="mx-auto max-w-2xl font-display text-5xl font-bold text-slate-900 text-center sm:text-7xl">My receipes</h1> %>
+  <h1 class="mx-auto max-w-2xl font-display text-5xl font-bold text-slate-900 text-center sm:text-7xl">My receipes</h1>
   <p class="mt-4 font-normal text-lg leading-8 text-gray-600 text-center">
     Save, search and find your favourite recipes
   </p>
   <nav class="py-8 flex justify-end">
     <%= link_to "Add",
         new_recipe_path,
-        class: "bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" %>
+        class: "group relative py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
   </nav>
   <section>
     <ul>
