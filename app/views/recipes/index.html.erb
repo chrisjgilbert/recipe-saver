@@ -1,5 +1,5 @@
 <div>
-  <h1 class="mx-auto max-w-2xl font-display text-5xl font-bold text-slate-900 text-center sm:text-7xl">My receipes</h1>
+  <%# <h1 class="mx-auto max-w-2xl font-display text-5xl font-bold text-slate-900 text-center sm:text-7xl">My receipes</h1> %>
   <p class="mt-4 font-normal text-lg leading-8 text-gray-600 text-center">
     Save, search and find your favourite recipes
   </p>
@@ -8,11 +8,11 @@
         new_recipe_path,
         class: "group relative py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
   </nav>
-  <section>
-    <ul>
-      <% @recipes.each do |recipe| %>
-        <li><%= render recipe %></li>
-      <% end %>
-    </ul>
+  <section class="grid grid-cols-1 md:grid-cols-3">
+    <% @recipes.each do |recipe| %>
+      <div class="grid-span-1">
+        <%= render recipe %>
+      </div>
+    <% end %>
   </section>
 </div>
