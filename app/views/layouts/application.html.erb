@@ -11,13 +11,16 @@
   </head>
   <body class="bg-gray-100">
     <%= render "layouts/flash_messages" %>
-    <nav>
-      <% if user_signed_in? %>
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path %>
-        <%= link_to "Sign up", new_user_registration_path %>
-      <% end %>
+    <nav class="bg-white border-b border-gray-200 text-sm font-medium">
+      <div class="mx-auto container flex flex-wrap items-center justify-between p-4">
+        <%= link_to "RecipeSaver", root_path, class: "font-medium text-xl" %>
+        <% if user_signed_in? %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn-secondary" %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path %>
+          <%= link_to "Sign up", new_user_registration_path %>
+        <% end %>
+      </div>
     </nav>
     <main class="container mx-auto mt-6 px-5 flex flex-col">
       <%= yield %>
