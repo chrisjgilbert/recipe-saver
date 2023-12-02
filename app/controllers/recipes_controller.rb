@@ -10,14 +10,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    url = recipe_params.fetch(:url)
-    response = HTTParty.get(url)
-    html = Nokogiri::HTML(response.body)
-    title = html.at_css("title").text
-    desc = html.at_css("meta[name='description']")&.[]("content")
-    image = html.at_css("meta[property='og:image']")&.[]("content")
-    metadata = {title: title, description: desc, image: image}
-    @recipe = current_user.recipes.build(metadata: metadata, url: url)
+    @recipe = current_user.recipes.build(recipe_params)
 
     if @recipe.save
       redirect_to recipes_path
@@ -49,6 +42,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:url)
+    params.require(:recipe).permit(:title, :description, :url)
   end
 end
