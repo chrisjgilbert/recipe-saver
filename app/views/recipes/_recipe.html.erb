@@ -1,19 +1,11 @@
-<article class="bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-  <%= link_to recipe.url, target: :_blank do %>
-    <%= image_tag recipe.image_url, class: "rounded-t-lg", alt: "" %>
-  <% end %>
-  <div class="p-5">
-    <%= link_to recipe.url, target: :_blank do %>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= recipe.title %></h5>
-    <% end %>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= recipe.description %></p>
-    <div class="flex gap-4">
-      <%= link_to edit_recipe_path(recipe), class: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" do %>
-        Update
-      <% end %>
-      <%= button_to recipe_path(recipe), method: :delete, class: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" do %>
-        Delete
-      <% end %>
+<%= link_to recipe.url, target: :_blank do %>
+  <div class="flex flex-wrap sm:flex-nowrap gap-4 p-4 rounded-sm shadow">
+    <div class="shrink-0">
+      <%= image_tag recipe.image_url, class: "object-cover rounded-md w-24 h-24", alt: "" %>
+    </div>
+    <div class="grow-1">
+      <h2 class="text-lg font-semibold text-gray-800"><%= recipe.title %></h2>
+      <p class="text-sm text-gray-600"><%= recipe.description %></p>
     </div>
   </div>
-</article>
+<% end %>
