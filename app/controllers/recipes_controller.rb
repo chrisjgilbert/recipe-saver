@@ -6,7 +6,12 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = current_user.recipes.build
+    @recipe = current_user.recipes.build(
+      title: params[:title],
+      description: params[:description],
+      image_url: params[:image_url],
+      url: params[:url]
+    )
   end
 
   def create
@@ -42,6 +47,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :url)
+    params.require(:recipe).permit(:url, :title, :description, :image_url)
   end
 end

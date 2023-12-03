@@ -53,6 +53,7 @@ gem "bootsnap", require: false
 
 gem "devise"
 gem "httparty"
+gem "byebug"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
