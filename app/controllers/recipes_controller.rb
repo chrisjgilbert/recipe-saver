@@ -2,7 +2,11 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recipes = current_user.recipes
+    @recipes = if params[:query].present?
+      current_user.recipes.where("title ILIKE ? OR description ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    else
+      current_user.recipes
+    end
   end
 
   def new
