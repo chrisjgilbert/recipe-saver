@@ -9,7 +9,8 @@ class LookupsController < ApplicationController
     title = page.css("meta[property='og:title']").first.attributes["content"].value
     desc = page.css("meta[property='og:description']").first.attributes["content"].value
     image_url = page.css("meta[property='og:image']").first.attributes["content"].value
-    redirect_to new_recipe_path(url: url, title: title, description: desc, image_url: image_url)
+
+    redirect_to new_recipe_path(title: title, description: desc, image_url: image_url, url: url)
   end
 
   private

@@ -1,9 +1,14 @@
-<div class="flex flex-wrap sm:flex-nowrap gap-4 p-4 rounded-sm shadow bg-white hover:bg-gray-50">
+<div class="flex flex-wrap sm:flex-nowrap gap-4 p-4 rounded-md shadow bg-white hover:bg-gray-50">
+  <div class="shrink-0">
+    <%= image_tag recipe.image_url, class: "h-24 w-24 object-contain rounded-lg" %>
+  </div>
   <div class="flex-1">
-    <%= link_to recipe.url, target: :_blank do %>
-      <h2 class="text-lg font-semibold text-gray-800 hover:underline"><%= recipe.title %></h2>
-      <p class="text-sm text-gray-600"><%= recipe.description %></p>
-      <p class="text-sm text-gray-600 truncate hover:underline"><%= recipe.url %></p>
+    <%= link_to recipe.url, target: :_blank, class: "flex flex-col h-full" do %>
+      <div class="grow-1">
+        <h2 class="text-xl font-semibold text-gray-800 hover:underline"><%= recipe.title %></h2>
+        <p class="text-sm text-gray-600"><%= recipe.description %></p>
+      </div>
+      <p class="text-sm text-gray-500 truncate hover:underline mt-auto"><%= recipe.url %></p>
     <% end %>
   </div>
   <div class="shrink-0 flex flex-col justify-between">

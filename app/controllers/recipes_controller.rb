@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = current_user.recipes.find(params[:id])
 
-    if @recipe.update(receipe_params)
+    if @recipe.update(recipe_params)
       redirect_to recipes_path
     else
       render :edit, status: :unprocessable_entity
